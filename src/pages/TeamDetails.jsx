@@ -38,7 +38,7 @@ export default function TeamDetails({ setLoading }) {
     }, [id]);
 
     if (notFound) {
-        return navigate("/not-found");;
+        return <NotFound />;
     }
 
     return (

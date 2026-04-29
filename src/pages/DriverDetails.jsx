@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import NotFound from "./NotFound";
 
 export default function DriverDetails({ setLoading }) {
 
@@ -35,7 +35,7 @@ export default function DriverDetails({ setLoading }) {
     }, [id]);
 
     if (notFound) {
-        return navigate("/not-found");;
+        return <NotFound />;
     }
 
     return (
