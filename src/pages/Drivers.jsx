@@ -11,17 +11,22 @@ export default function Drivers({ setLoading }) {
 
     const [drivers, setDrivers] = useState([]);
 
+
     useEffect(() => {
         setLoading(true);
         axios.get(`${backEndUrl}api/drivers`)
             .then(res => {
                 setDrivers(res.data.data);
             })
+            .catch((err) => {
+                console.log(err);
+            })
             .finally(() => {
                 setLoading(false);
             });
 
     }, []);
+
     return (
         <>
             <h1>Pagina Piloti</h1>

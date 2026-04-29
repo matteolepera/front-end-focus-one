@@ -17,17 +17,29 @@ export default function TeamDetails({ setLoading }) {
         car_specs: null
     });
 
+    const [notFound, setNotFound] = useState(false);
+
     useEffect(() => {
         setLoading(true);
         axios.get(`${backEndUrl}api/teams/${id}`)
             .then(res => {
                 setTeam(res.data.data);
             })
+            .catch((err) => {
+                console.log(err);
+                if (err.response?.status === 404) {
+                    setNotFound(true);
+                }
+            })
             .finally(() => {
                 setLoading(false);
             });
 
     }, [id]);
+
+    if (notFound) {
+        return navigate("/not-found");;
+    }
 
     return (
         <>

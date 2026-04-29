@@ -14,17 +14,29 @@ export default function DriverDetails({ setLoading }) {
 
     const { id } = useParams();
 
+    const [notFound, setNotFound] = useState(false);
+
     useEffect(() => {
         setLoading(true);
         axios.get(`${backEndUrl}api/drivers/${id}`)
             .then(res => {
                 setDriver(res.data.data);
             })
+            .catch((err) => {
+                console.log(err);
+                if (err.response?.status === 404) {
+                    setNotFound(true);
+                }
+            })
             .finally(() => {
                 setLoading(false);
             });
 
     }, [id]);
+
+    if (notFound) {
+        return navigate("/not-found");;
+    }
 
     return (
         <>

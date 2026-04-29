@@ -17,6 +17,9 @@ export default function Teams({ setLoading }) {
             .then(res => {
                 setTeams(res.data.data);
             })
+            .catch((err) => {
+                console.log(err);
+            })
             .finally(() => {
                 setLoading(false);
             });
