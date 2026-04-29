@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Drivers() {
 
+    const navigate = useNavigate();
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
 
     const [drivers, setDrivers] = useState([]);
@@ -19,6 +21,11 @@ export default function Drivers() {
     return (
         <>
             <h1>Pagina Piloti</h1>
+
+            <button onClick={() => navigate(-1)}>
+                ← Indietro
+            </button>
+
             <div style={{ padding: "20px" }}>
 
                 {drivers.map((driver, index) => (

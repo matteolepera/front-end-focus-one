@@ -2,10 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function DriverDetails() {
 
+    const navigate = useNavigate();
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
 
     const [driver, setDriver] = useState({});
@@ -23,6 +25,11 @@ export default function DriverDetails() {
     return (
         <>
             <h1>Pagina del singolo pilota</h1>
+
+            <button onClick={() => navigate(-1)}>
+                ← Indietro
+            </button>
+
             <div style={{ padding: "20px", maxWidth: "1000px", margin: "0 auto" }}>
 
                 {/* HEADER */}

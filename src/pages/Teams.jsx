@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Teams() {
 
+    const navigate = useNavigate();
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
 
     const [teams, setTeams] = useState([]);
@@ -20,6 +22,11 @@ export default function Teams() {
     return (
         <>
             <h1>Pagina Teams</h1>
+
+            <button onClick={() => navigate(-1)}>
+                ← Indietro
+            </button>
+
             <div style={{ padding: "20px" }}>
 
                 {teams.map(team => (

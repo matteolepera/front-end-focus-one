@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function TeamDetails() {
+
+    const navigate = useNavigate();
 
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -25,6 +28,11 @@ export default function TeamDetails() {
     return (
         <>
             <h1>Pagina del singolo team</h1>
+
+            <button onClick={() => navigate(-1)}>
+                ← Indietro
+            </button>
+
             <div style={{ padding: "20px", maxWidth: "1000px", margin: "0 auto" }}>
 
                 {/* HEADER TEAM */}
