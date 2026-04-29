@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Teams() {
@@ -31,6 +32,9 @@ export default function Teams() {
                             borderRadius: "10px"
                         }}
                     >
+                        <Link to={`/teams/${team.id}`}>
+                            Vai al team
+                        </Link>
 
                         {/* TEAM HEADER */}
                         <h2>{team.name}</h2>
@@ -93,9 +97,12 @@ export default function Teams() {
                                         {driver.biography?.slice(0, 120)}...
                                     </p>
                                 </div>
+
+
                             ))}
                         </div>
                     </div>
+
                 ))}
             </div>
         </>

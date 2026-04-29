@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Drivers() {
@@ -31,8 +32,9 @@ export default function Drivers() {
                         }}
                     >
 
-                        {/* INDEX */}
-                        <h3>Index: {index}</h3>
+                        <Link to={`/drivers/${driver.id}`}>
+                            Vai al pilota
+                        </Link>
 
                         {/* HEADER CON IMMAGINE */}
                         <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>

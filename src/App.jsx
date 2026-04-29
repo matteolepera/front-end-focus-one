@@ -5,6 +5,8 @@ import DefaultLayout from "./layouts/DafaultLayouts"
 import Home from "./pages/Home"
 import Teams from "./pages/Teams"
 import Drivers from "./pages/Drivers"
+import TeamDetails from "./pages/TeamDetails"
+import DriverDetails from "./pages/DriverDetails"
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/drivers" element={<Drivers />} />
+            <Route path="/teams/:id" element={<TeamDetails />} />
+            <Route path="/drivers/:id" element={<DriverDetails />} />
           </Route>
         </Routes>
       </BrowserRouter>
