@@ -9,7 +9,7 @@ export default function Teams() {
     const [teams, setTeams] = useState([]);
 
     useEffect(() => {
-        axios.get(`${backEndUrl}/teams`)
+        axios.get(`${backEndUrl}api/teams`)
             .then(res => {
                 setTeams(res.data.data);
             })
