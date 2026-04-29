@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export default function TeamDetails() {
+export default function TeamDetails({ setLoading }) {
 
     const navigate = useNavigate();
 
@@ -18,10 +18,14 @@ export default function TeamDetails() {
     });
 
     useEffect(() => {
+        setLoading(true);
         axios.get(`${backEndUrl}api/teams/${id}`)
             .then(res => {
                 setTeam(res.data.data);
             })
+            .finally(() => {
+                setLoading(false);
+            });
 
     }, [id]);
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-export default function DriverDetails() {
+export default function DriverDetails({ setLoading }) {
 
     const navigate = useNavigate();
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
@@ -15,10 +15,14 @@ export default function DriverDetails() {
     const { id } = useParams();
 
     useEffect(() => {
+        setLoading(true);
         axios.get(`${backEndUrl}api/drivers/${id}`)
             .then(res => {
                 setDriver(res.data.data);
             })
+            .finally(() => {
+                setLoading(false);
+            });
 
     }, [id]);
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Teams() {
+export default function Teams({ setLoading }) {
 
     const navigate = useNavigate();
     const backEndUrl = import.meta.env.VITE_BACKEND_URL;
@@ -12,10 +12,14 @@ export default function Teams() {
     const [teams, setTeams] = useState([]);
 
     useEffect(() => {
+        setLoading(true);
         axios.get(`${backEndUrl}api/teams`)
             .then(res => {
                 setTeams(res.data.data);
             })
+            .finally(() => {
+                setLoading(false);
+            });
 
     }, []);
 
