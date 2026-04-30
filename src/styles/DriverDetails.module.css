@@ -1,0 +1,368 @@
+.page {
+    min-height: 100dvh;
+    padding: 1rem;
+    color: #ffffff;
+    font-family:
+        "SF Pro Display",
+        "Inter",
+        "Segoe UI",
+        system-ui,
+        sans-serif;
+    background:
+        radial-gradient(circle at 20% 8%, rgba(225, 6, 0, 0.16), transparent 26%),
+        linear-gradient(180deg, #05070b 0%, #080b11 46%, #05070b 100%);
+}
+
+.backButton {
+    min-height: 2.55rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.hero {
+    position: relative;
+    min-height: 38rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    isolation: isolate;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background:
+        linear-gradient(145deg, rgba(28, 33, 43, 0.92), rgba(6, 8, 13, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(180deg, rgba(5, 7, 11, 0.05), rgba(5, 7, 11, 0.9)),
+        linear-gradient(90deg, rgba(5, 7, 11, 0.82), rgba(5, 7, 11, 0.18));
+}
+
+.heroText {
+    position: relative;
+    z-index: 2;
+    max-width: 34rem;
+}
+
+.eyebrow,
+.kicker {
+    color: #ff3b3b;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0.5rem 0 0;
+    font-size: clamp(3rem, 15vw, 7rem);
+    line-height: 0.84;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.58em;
+}
+
+.slogan {
+    max-width: 32rem;
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.biography {
+    max-width: 36rem;
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.2rem;
+    min-height: 2.8rem;
+    padding: 0 1rem;
+    border-radius: 999px;
+    background: rgba(225, 6, 0, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.driverImage {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: -1;
+    width: min(86%, 34rem);
+    height: 82%;
+    object-fit: cover;
+    object-position: top center;
+    transform: translateX(-50%);
+    filter:
+        brightness(0.95) drop-shadow(0 30px 38px rgba(0, 0, 0, 0.58));
+}
+
+.heroInfo {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.65rem;
+}
+
+.heroInfo div,
+.statsGrid article {
+    background:
+        linear-gradient(145deg, rgba(18, 22, 30, 0.86), rgba(4, 6, 10, 0.78));
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.heroInfo div {
+    border-radius: 1rem;
+    padding: 0.8rem;
+}
+
+.heroInfo span,
+.statsGrid span,
+.teamMeta span {
+    display: block;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.heroInfo strong,
+.statsGrid strong,
+.teamMeta strong {
+    display: block;
+    margin-top: 0.2rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.25;
+}
+
+.statsGrid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.statsGrid article {
+    border-radius: 1.2rem;
+    padding: 1rem;
+    box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.statsGrid strong {
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+.teamSection {
+    margin-top: 1rem;
+}
+
+.teamCard {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    color: #ffffff;
+    text-decoration: none;
+    isolation: isolate;
+    background:
+        linear-gradient(145deg, rgba(24, 29, 39, 0.9), rgba(5, 7, 11, 0.86));
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition:
+        transform 0.24s ease,
+        border-color 0.24s ease,
+        box-shadow 0.24s ease,
+        background 0.24s ease;
+}
+
+.teamCard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(135deg, rgba(225, 6, 0, 0.16), transparent 42%);
+    opacity: 0;
+    transform: scale(1.08);
+    transition:
+        opacity 0.24s ease,
+        transform 0.24s ease;
+}
+
+.teamCard:hover {
+    transform: translateY(-4px) scale(0.992);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.42),
+        0 18px 40px rgba(225, 6, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.teamCard:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.teamContent {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 1.25rem;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.24s ease;
+}
+
+.teamCard:hover .teamContent {
+    transform: scale(0.975);
+}
+
+.teamHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.teamLogoBox {
+    display: grid;
+    place-items: center;
+    width: 4.8rem;
+    min-width: 4.8rem;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background:
+        linear-gradient(145deg, rgba(18, 22, 30, 0.96), rgba(4, 6, 10, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition:
+        transform 0.24s ease,
+        box-shadow 0.24s ease,
+        border-color 0.24s ease;
+}
+
+.teamCard:hover .teamLogoBox {
+    transform: scale(0.94);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.36),
+        0 0 28px rgba(225, 6, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.teamLogoBox img {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: contain;
+}
+
+.teamHeader h2 {
+    margin: 0.4rem 0 0;
+    font-size: clamp(2.1rem, 9vw, 4rem);
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.teamHeader p {
+    margin: 0.65rem 0 0;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.5;
+}
+
+.teamMeta {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.teamMeta div {
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 768px) {
+    .page {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        min-height: 40rem;
+        padding: 1.5rem;
+    }
+
+    .heroInfo {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .teamCard {
+        padding: 1.5rem;
+    }
+
+    .teamMeta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1100px) {
+    .page {
+        padding: 2rem;
+    }
+
+    .driverImage {
+        left: 70%;
+        width: min(40%, 31rem);
+        height: 88%;
+    }
+}

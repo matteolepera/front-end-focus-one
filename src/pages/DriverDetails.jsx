@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import NotFound from "./NotFound";
+import styles from "../styles/DriverDetails.module.css"
 
 export default function DriverDetails({ setLoading }) {
 
@@ -39,134 +40,132 @@ export default function DriverDetails({ setLoading }) {
     }
 
     return (
-        <>
-            <h1>Pagina del singolo pilota</h1>
-
-            <button onClick={() => navigate(-1)}>
-                ← Indietro
+        <div className={styles.page}>
+            <button
+                className={styles.backButton}
+                type="button"
+                onClick={() => navigate(-1)}
+            >
+                Indietro
             </button>
 
-            <div style={{ padding: "20px", maxWidth: "1000px", margin: "0 auto" }}>
+            <section className={styles.hero}>
+                <div className={styles.heroText}>
+                    <span className={styles.eyebrow}>
+                        {driver.team?.name || "Formula 1 Driver"}
+                    </span>
 
-                {/* HEADER */}
-                <div
-                    style={{
-                        display: "flex",
-                        gap: "25px",
-                        alignItems: "center",
-                        marginBottom: "30px"
-                    }}
-                >
-                    <img
-                        src={`${backEndUrl}storage/${driver.photo}`}
-                        alt={`${driver.first_name} ${driver.last_name}`}
-                        style={{
-                            width: "220px",
-                            height: "260px",
-                            objectFit: "cover",
-                            objectPosition: "center top",
-                            borderRadius: "16px"
-                        }}
-                    />
+                    <h1>
+                        <span>{driver.first_name}</span>
+                        {driver.last_name}
+                    </h1>
 
-                    <div>
-                        <h1>
-                            {driver.first_name} {driver.last_name}
-                        </h1>
+                    <p className={styles.slogan}>{driver.driver_slogan}</p>
 
-                        <h2>#{driver.driver_number}</h2>
-
-                        <p>🌍 Nationality: {driver.nationality}</p>
-                        <p>📅 Born: {driver.date_of_birth}</p>
-                        <p>🏁 Season: {driver.season}</p>
-                        <p>💬 "{driver.driver_slogan}"</p>
-                    </div>
+                    <p className={styles.biography}>
+                        {driver.biography}
+                    </p>
                 </div>
 
-                <hr />
 
-                {/* STATS */}
-                <h2>Statistics</h2>
-
-                <div
-                    style={{
-                        display: "flex",
-                        gap: "20px",
-                        flexWrap: "wrap",
-                        marginBottom: "30px"
-                    }}
-                >
-                    <div>
-                        <h3>🏁 Wins</h3>
-                        <p>{driver.total_wins}</p>
-                    </div>
-
-                    <div>
-                        <h3>🥇 Pole Positions</h3>
-                        <p>{driver.total_pole_positions}</p>
-                    </div>
-
-                    <div>
-                        <h3>🏆 Podiums</h3>
-                        <p>{driver.total_podiums}</p>
-                    </div>
-
-                    <div>
-                        <h3>🌍 Championships</h3>
-                        <p>{driver.total_world_championships}</p>
-                    </div>
+                <div className={styles.number}>
+                    #{driver.driver_number}
                 </div>
 
-                <hr />
+                <img
+                    className={styles.driverImage}
+                    src={`${backEndUrl}storage/${driver.photo}`}
+                    alt={`${driver.first_name} ${driver.last_name}`}
+                />
 
-                {/* BIOGRAPHY */}
-                <h2>Biography</h2>
-                <p style={{ lineHeight: "1.7", marginBottom: "30px" }}>
-                    {driver.biography}
-                </p>
-
-                <hr />
-
-                {/* TEAM */}
-                {driver.team && (
+                <div className={styles.heroInfo}>
                     <div>
-                        <h2>Team</h2>
+                        <span>Nationality</span>
+                        <strong>{driver.nationality}</strong>
+                    </div>
 
-                        <div
-                            style={{
-                                display: "flex",
-                                gap: "20px",
-                                alignItems: "center",
-                                border: "1px solid #ccc",
-                                padding: "20px",
-                                borderRadius: "12px"
-                            }}
-                        >
-                            <img
-                                src={`${backEndUrl}storage/${driver.team.logo_image}`}
-                                alt={driver.team.name}
-                                style={{
-                                    width: "100px",
-                                    height: "100px",
-                                    objectFit: "contain"
-                                }}
-                            />
+                    <div>
+                        <span>Born</span>
+                        <strong>{driver.date_of_birth}</strong>
+                    </div>
 
-                            <div>
-                                <h3>{driver.team.name}</h3>
-                                <p>{driver.team.full_name}</p>
-                                <p>📍 {driver.team.base_city}</p>
-                                <p>👔 {driver.team.team_chief}</p>
-                                <p>🏆 Championships: {driver.team.total_world_championships}</p>
+                    <div>
+                        <span>Season</span>
+                        <strong>{driver.season}</strong>
+                    </div>
+                </div>
+            </section>
 
-                                <Link to={`/teams/${driver.team.id}`}>
-                                    Vai al Team
-                                </Link>
+            <section className={styles.statsGrid}>
+                <article>
+                    <span>Wins</span>
+                    <strong>{driver.total_wins}</strong>
+                </article>
+
+                <article>
+                    <span>Pole Positions</span>
+                    <strong>{driver.total_pole_positions}</strong>
+                </article>
+
+                <article>
+                    <span>Podiums</span>
+                    <strong>{driver.total_podiums}</strong>
+                </article>
+
+                <article>
+                    <span>Championships</span>
+                    <strong>{driver.total_world_championships}</strong>
+                </article>
+            </section>
+
+            {driver.team && (
+                <section className={styles.teamSection}>
+                    <Link
+                        to={`/teams/${driver.team.id}`}
+                        className={styles.teamCard}
+                    >
+                        <div className={styles.teamContent}>
+                            <div className={styles.teamHeader}>
+                                <div className={styles.teamLogoBox}>
+                                    <img
+                                        src={`${backEndUrl}storage/${driver.team.logo_image}`}
+                                        alt={driver.team.name}
+                                    />
+                                </div>
+
+                                <div>
+                                    <span className={styles.kicker}>Current Team</span>
+                                    <h2>{driver.team.name}</h2>
+                                    <p>{driver.team.full_name}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.teamMeta}>
+                                <div>
+                                    <span>Base</span>
+                                    <strong>{driver.team.base_city}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Team Chief</span>
+                                    <strong>{driver.team.team_chief}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Technical Chief</span>
+                                    <strong>{driver.team.technical_chief}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Titles</span>
+                                    <strong>{driver.team.total_world_championships}</strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )}
-            </div>
-        </>
+                    </Link>
+                </section>
+            )}
+
+        </div>
     )
 }
