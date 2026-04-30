@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import NotFound from "./NotFound";
+import DriverLineupCard from "../components/DriverLineupCard"
+import styles from "../styles/TeamDetails.module.css"
 
 export default function TeamDetails({ setLoading }) {
 
@@ -43,136 +45,151 @@ export default function TeamDetails({ setLoading }) {
     }
 
     return (
-        <>
-            <h1>Pagina del singolo team</h1>
-
-            <button onClick={() => navigate(-1)}>
-                ← Indietro
+        <div className={styles.page}>
+            <button
+                className={styles.backButton}
+                type="button"
+                onClick={() => navigate(-1)}
+            >
+                Indietro
             </button>
 
-            <div style={{ padding: "20px", maxWidth: "1000px", margin: "0 auto" }}>
-
-                {/* HEADER TEAM */}
-                <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-
-                    <img
-                        src={`${backEndUrl}storage/${team.logo_image}`}
-                        alt={team.name}
-                        style={{
-                            width: "120px",
-                            height: "120px",
-                            objectFit: "contain"
-                        }}
-                    />
+            <section className={styles.hero}>
+                <div className={styles.heroContent}>
+                    <div className={styles.logoBox}>
+                        <img
+                            src={`${backEndUrl}storage/${team.logo_image}`}
+                            alt={team.name}
+                        />
+                    </div>
 
                     <div>
+                        <span className={styles.eyebrow}>Formula 1 Team</span>
                         <h1>{team.name}</h1>
-                        <h3>{team.full_name}</h3>
-
-                        <p>📍 {team.base_city}</p>
-                        <p>👔 Team Chief: {team.team_chief}</p>
-                        <p>⚙️ Technical Chief: {team.technical_chief}</p>
-                        <p>🏆 World Championships: {team.total_world_championships}</p>
-                        <p>📅 First Entry: {team.first_team_entry}</p>
-                        <p>🪪 Reserve Driver: {team.reserve_driver}</p>
+                        <p>{team.full_name}</p>
                     </div>
                 </div>
 
-                <hr style={{ margin: "20px 0" }} />
-
-                {/* CAR SPECS */}
-                {team.car_specs && (
-                    <div>
-
-                        <h2>🚗 Car Specs</h2>
-
-                        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-
-                            <img
-                                src={`${backEndUrl}storage/${team.car_specs.car_image}`}
-                                alt="car"
-                                style={{
-                                    width: "250px",
-                                    height: "150px",
-                                    objectFit: "cover",
-                                    borderRadius: "10px"
-                                }}
-                            />
-
-                            <div>
-                                <p>🏁 Chassis: {team.car_specs.chassis}</p>
-                                <p>⚖️ Weight: {team.car_specs.weight_kg} kg</p>
-                                <p>🔧 Front Suspension: {team.car_specs.front_suspension}</p>
-                                <p>🔧 Rear Suspension: {team.car_specs.rear_suspension}</p>
-
-                                {team.car_specs.power_unit && (
-                                    <>
-                                        <p>⚡ Power Unit: {team.car_specs.power_unit.name}</p>
-                                        <p>🏭 Manufacturer: {team.car_specs.power_unit.manufacturer}</p>
-                                        <p>📆 Season: {team.car_specs.power_unit.season}</p>
-                                    </>
-                                )}
-                            </div>
-                        </div>
-                    </div>
+                {team.car_specs?.car_image && (
+                    <img
+                        className={styles.carImage}
+                        src={`${backEndUrl}storage/${team.car_specs.car_image}`}
+                        alt={`Monoposto ${team.name}`}
+                    />
                 )}
 
-                <hr style={{ margin: "20px 0" }} />
+                <div className={styles.stats}>
+                    <div>
+                        <span>Base</span>
+                        <strong>{team.base_city}</strong>
+                    </div>
 
-                {/* DRIVERS */}
-                <h2>🏎️ Drivers</h2>
+                    <div>
+                        <span>Team Chief</span>
+                        <strong>{team.team_chief}</strong>
+                    </div>
 
-                <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+                    <div>
+                        <span>Technical Chief</span>
+                        <strong>{team.technical_chief}</strong>
+                    </div>
 
-                    {team.drivers.map(driver => (
-                        <div
-                            key={driver.id}
-                            style={{
-                                border: "1px solid #ddd",
-                                padding: "15px",
-                                borderRadius: "12px",
-                                width: "280px"
-                            }}
-                        >
-
-                            {/* DRIVER IMAGE */}
-                            <img
-                                src={`${backEndUrl}storage/${driver.photo}`}
-                                alt={driver.first_name}
-                                style={{
-                                    width: "100%",
-                                    height: "180px",
-                                    objectFit: "cover",
-                                    objectPosition: "center top",
-                                    borderRadius: "10px",
-                                    marginBottom: "10px"
-                                }}
-                            />
-
-                            {/* INFO */}
-                            <h3>
-                                {driver.first_name} {driver.last_name}
-                            </h3>
-
-                            <p>#{driver.driver_number}</p>
-                            <p>🇳🇱 {driver.nationality}</p>
-                            <p>📅 {driver.date_of_birth}</p>
-
-                            <p>🏁 Wins: {driver.total_wins}</p>
-                            <p>🥇 Poles: {driver.total_pole_positions}</p>
-                            <p>🏆 Podiums: {driver.total_podiums}</p>
-
-                            <p style={{ fontSize: "12px", marginTop: "10px" }}>
-                                {driver.driver_slogan}
-                            </p>
-                            <Link to={`/drivers/${driver.id}`}>
-                                Vai al Pilota
-                            </Link>
-                        </div>
-                    ))}
-
+                    <div>
+                        <span>World Titles</span>
+                        <strong>{team.total_world_championships}</strong>
+                    </div>
                 </div>
-            </div>
-        </>
+            </section>
+
+            <section className={styles.infoGrid}>
+                <article className={styles.panel}>
+                    <span className={styles.kicker}>Identity</span>
+                    <h2>Team Profile</h2>
+
+                    <div className={styles.dataList}>
+                        <div>
+                            <span>First Entry</span>
+                            <strong>{team.first_team_entry}</strong>
+                        </div>
+
+                        <div>
+                            <span>Reserve Driver</span>
+                            <strong>{team.reserve_driver}</strong>
+                        </div>
+
+                        <div>
+                            <span>Full Name</span>
+                            <strong>{team.full_name}</strong>
+                        </div>
+                    </div>
+                </article>
+
+                {team.car_specs && (
+                    <article className={styles.panel}>
+                        <span className={styles.kicker}>Engineering</span>
+                        <h2>Car Specs</h2>
+
+                        <div className={styles.dataList}>
+                            <div>
+                                <span>Chassis</span>
+                                <strong>{team.car_specs.chassis}</strong>
+                            </div>
+
+                            <div>
+                                <span>Weight</span>
+                                <strong>{team.car_specs.weight_kg} kg</strong>
+                            </div>
+
+                            <div>
+                                <span>Front Suspension</span>
+                                <strong>{team.car_specs.front_suspension}</strong>
+                            </div>
+
+                            <div>
+                                <span>Rear Suspension</span>
+                                <strong>{team.car_specs.rear_suspension}</strong>
+                            </div>
+                        </div>
+                    </article>
+                )}
+
+                {team.car_specs?.power_unit && (
+                    <article className={styles.panel}>
+                        <span className={styles.kicker}>Power Unit</span>
+                        <h2>{team.car_specs.power_unit.name}</h2>
+
+                        <div className={styles.dataList}>
+                            <div>
+                                <span>Manufacturer</span>
+                                <strong>{team.car_specs.power_unit.manufacturer}</strong>
+                            </div>
+
+                            <div>
+                                <span>Season</span>
+                                <strong>{team.car_specs.power_unit.season}</strong>
+                            </div>
+                        </div>
+                    </article>
+                )}
+            </section>
+
+            <section className={styles.driversSection}>
+                <div className={styles.sectionHeader}>
+                    <span className={styles.kicker}>The Lineup</span>
+                    <h2>Drivers</h2>
+                </div>
+
+                <div className={styles.driversGrid}>
+                    {team.drivers?.map((driver) => (
+                        <DriverLineupCard
+                            key={driver.id}
+                            driver={driver}
+                            backEndUrl={backEndUrl}
+                        />
+                    ))}
+                </div>
+
+            </section>
+        </div>
     )
 }
