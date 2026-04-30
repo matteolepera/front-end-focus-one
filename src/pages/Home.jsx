@@ -1,50 +1,79 @@
 import { Link } from "react-router-dom";
+import styles from "../styles/Home.module.css"
 
 export default function Home() {
     return (
-        <>
-            <h1>Home Page</h1>
+        <div className={styles.home}>
+            <section className={styles.hero}>
+                <div className={styles.heroMedia}>
+                    <video
+                        src="/videos/hero.mp4"
+                        poster="/images/hero.jpg"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                    />
+                </div>
 
-            <section className="section">
-                <img src="/images/hero.jpg" alt="hero" />
+                <div className={styles.heroOverlay}></div>
 
-                <h2>The new Era of Speed</h2>
-                <p>
-                    Discover the Team and Drivers
+                <div className={styles.heroContent}>
+                    <span className={styles.eyebrow}>FocusOne</span>
 
-                    shaping the 2026 season and beyond
-                </p>
+                    <h1>The New Era of Speed</h1>
 
+                    <p>
+                        Teams, drivers and performance insights from the 2026 Formula 1 season.
+                    </p>
+                </div>
+
+                <div className={styles.scrollHint} aria-hidden="true">
+                    <span></span>
+                </div>
             </section>
-            <hr></hr>
 
-            <section className="section">
-                <img src="/images/teams.jpg" alt="Team" />
+            <section className={styles.featureSection}>
+                <div className={styles.featureMedia}>
+                    <img src="/images/teams.jpg" alt="Formula 1 team garage" />
+                </div>
 
-                <h2>Team</h2>
-                <p>
-                    Scopri tutti i team della competizione, la loro storia e le loro performance.
-                </p>
+                <div className={styles.featureContent}>
+                    <span className={styles.kicker}>Constructors</span>
 
-                <Link to={"/teams"}>
-                    <button>Visualizza tutti i team</button>
-                </Link>
+                    <h2>Team</h2>
+
+                    <p>
+                        Esplora le scuderie della competizione, la loro identità, la storia,
+                        le performance e i dettagli tecnici che definiscono la stagione.
+                    </p>
+
+                    <Link to="/teams" className={styles.linkButton}>
+                        Visualizza team
+                    </Link>
+                </div>
             </section>
-            <hr></hr>
-            <section className="section">
-                <img src="/images/drivers.jpg" alt="driver" />
 
-                <h2>Driver</h2>
-                <p>
-                    Scopri tutti i piloti della competizione, la loro storia e le loro performance.
-                </p>
+            <section className={`${styles.featureSection} ${styles.reverse}`}>
+                <div className={styles.featureMedia}>
+                    <img src="/images/drivers.jpg" alt="Formula 1 driver helmet" />
+                </div>
 
-                <Link to={"/drivers"}>
-                    <button>Visualizza tutti i piloti</button>
-                </Link>
+                <div className={styles.featureContent}>
+                    <span className={styles.kicker}>The Grid</span>
+
+                    <h2>Piloti</h2>
+
+                    <p>
+                        Scopri i protagonisti in pista: profili, carriere, risultati e
+                        caratteristiche dei piloti che stanno plasmando la nuova era della Formula 1.
+                    </p>
+
+                    <Link to="/drivers" className={styles.linkButton}>
+                        Visualizza piloti
+                    </Link>
+                </div>
             </section>
-            <hr></hr>
-
-        </>
+        </div>
     )
 }

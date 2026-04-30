@@ -6,7 +6,7 @@ export default function DefaultLayout() {
     return (
         <>
             <Sidebar />
-            <main>
+            <main style={{ marginLeft: "5.25rem" }}>
                 <Outlet />
             </main>
 
