@@ -7,13 +7,17 @@ export default function Sidebar() {
     return (
         <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
             <div className={styles.top}>
-                <div className={styles.logo}>
-                    <img src="/images/focusone-logo.png" alt="FocusOne" />
-                </div>
-
-                <div className={styles.brand}>
-                    <span>FocusOne</span>
-                    <small>F1 Intelligence</small>
+                <div className={styles.logoWrap}>
+                    <img
+                        src="/images/flogo.png"
+                        alt="F"
+                        className={`${styles.logoImg} ${isOpen ? styles.logoHidden : styles.logoVisible}`}
+                    />
+                    <img
+                        src="/images/fonelogo.png"
+                        alt="FocusOne"
+                        className={`${styles.logoImg} ${isOpen ? styles.logoVisible : styles.logoHidden}`}
+                    />
                 </div>
             </div>
 

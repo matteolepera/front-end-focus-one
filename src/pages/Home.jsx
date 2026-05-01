@@ -35,28 +35,28 @@ export default function Home() {
 
             <section className={styles.featureSection}>
                 <div className={styles.featureMedia}>
-                    <img src="/images/teams.jpg" alt="Formula 1 team garage" />
+                    <img src="/images/teams.png" alt="Formula 1 team garage" />
                 </div>
 
                 <div className={styles.featureContent}>
                     <span className={styles.kicker}>Constructors</span>
 
-                    <h2>Team</h2>
+                    <h2>Teams</h2>
 
                     <p>
-                        Esplora le scuderie della competizione, la loro identità, la storia,
+                        Esplora le scuderie della competizione, la loro identità,
                         le performance e i dettagli tecnici che definiscono la stagione.
                     </p>
 
                     <Link to="/teams" className={styles.linkButton}>
-                        Visualizza team
+                        Visualizza teams
                     </Link>
                 </div>
             </section>
 
             <section className={`${styles.featureSection} ${styles.reverse}`}>
                 <div className={styles.featureMedia}>
-                    <img src="/images/drivers.jpg" alt="Formula 1 driver helmet" />
+                    <img src="/images/drivers.png" alt="Formula 1 driver helmet" />
                 </div>
 
                 <div className={styles.featureContent}>

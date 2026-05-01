@@ -95,7 +95,7 @@ export default function TeamDetails({ setLoading }) {
                     </div>
 
                     <div>
-                        <span>World Titles</span>
+                        <span>Titoli Mondiali</span>
                         <strong>{team.total_world_championships}</strong>
                     </div>
                 </div>

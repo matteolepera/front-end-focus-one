@@ -50,69 +50,39 @@
 .top {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    justify-content: center;
     min-height: 2.35rem;
+    padding: 0.2rem 0;
 }
 
-.logo {
-    display: grid;
-    place-items: center;
-
-    width: 2.35rem;
-    min-width: 2.35rem;
-    aspect-ratio: 1;
-
-    overflow: hidden;
-    border-radius: 0.9rem;
-
-    background:
-        linear-gradient(145deg, rgba(18, 22, 30, 0.96), rgba(4, 6, 10, 0.96));
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-        0 10px 26px rgba(0, 0, 0, 0.38),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+.logoWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: visible;
+    position: relative;
 }
 
-.logo img {
-    width: 1.65rem;
-    height: 1.65rem;
+.logoImg {
+    height: 1.2rem;
+    width: auto;
     object-fit: contain;
+    position: absolute;
+    transition: opacity 0.25s ease;
 }
 
-.brand {
-    min-width: 0;
-    opacity: 0;
-    transform: translateX(-0.4rem);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+.open .logoImg {
+    height: 1.8rem;
 }
 
-.open .brand {
+.logoVisible {
     opacity: 1;
-    transform: translateX(0);
 }
 
-.brand span {
-    display: block;
-    color: #ffffff;
-    font-size: 1.05rem;
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-}
-
-
-.brand small {
-    display: block;
-    margin-top: 0.26rem;
-    color: rgba(255, 255, 255, 0.48);
-    font-size: 0.62rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    white-space: nowrap;
+.logoHidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .toggle {

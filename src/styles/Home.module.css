@@ -114,7 +114,7 @@
 }
 
 .featureMedia {
-    min-height: 20rem;
+    height: 20rem;
     overflow: hidden;
     border-radius: 1.4rem;
     background:
@@ -128,8 +128,10 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    opacity: 0.86;
+    object-position: center;
 }
+
+
 
 .featureContent {
     padding: 0.25rem;
@@ -211,13 +213,15 @@
     }
 
     .featureMedia {
-        min-height: 30rem;
+        height: 30rem;
     }
 
     .featureContent {
         padding: 1rem;
     }
 }
+
+
 
 @media (min-width: 1200px) {
 
