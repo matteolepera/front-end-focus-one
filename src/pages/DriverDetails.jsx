@@ -80,17 +80,17 @@ export default function DriverDetails({ setLoading }) {
 
                 <div className={styles.heroInfo}>
                     <div>
-                        <span>Nationality</span>
+                        <span>Nazionalit&agrave;</span>
                         <strong>{driver.nationality}</strong>
                     </div>
 
                     <div>
-                        <span>Born</span>
+                        <span>Data di nascita</span>
                         <strong>{driver.date_of_birth}</strong>
                     </div>
 
                     <div>
-                        <span>Season</span>
+                        <span>Stagione</span>
                         <strong>{driver.season}</strong>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ export default function DriverDetails({ setLoading }) {
 
             <section className={styles.statsGrid}>
                 <article>
-                    <span>Wins</span>
+                    <span>Vittorie</span>
                     <strong>{driver.total_wins}</strong>
                 </article>
 
@@ -108,12 +108,12 @@ export default function DriverDetails({ setLoading }) {
                 </article>
 
                 <article>
-                    <span>Podiums</span>
+                    <span>Podi</span>
                     <strong>{driver.total_podiums}</strong>
                 </article>
 
                 <article>
-                    <span>Championships</span>
+                    <span>Titoli Mondiali</span>
                     <strong>{driver.total_world_championships}</strong>
                 </article>
             </section>
@@ -134,7 +134,7 @@ export default function DriverDetails({ setLoading }) {
                                 </div>
 
                                 <div>
-                                    <span className={styles.kicker}>Current Team</span>
+                                    <span className={styles.kicker}>Team Attuale</span>
                                     <h2>{driver.team.name}</h2>
                                     <p>{driver.team.full_name}</p>
                                 </div>
@@ -142,22 +142,22 @@ export default function DriverDetails({ setLoading }) {
 
                             <div className={styles.teamMeta}>
                                 <div>
-                                    <span>Base</span>
+                                    <span>Sede</span>
                                     <strong>{driver.team.base_city}</strong>
                                 </div>
 
                                 <div>
-                                    <span>Team Chief</span>
+                                    <span>Team Principal</span>
                                     <strong>{driver.team.team_chief}</strong>
                                 </div>
 
                                 <div>
-                                    <span>Technical Chief</span>
+                                    <span>Direttore Tecnico</span>
                                     <strong>{driver.team.technical_chief}</strong>
                                 </div>
 
                                 <div>
-                                    <span>Titles</span>
+                                    <span>Titoli Mondiali</span>
                                     <strong>{driver.team.total_world_championships}</strong>
                                 </div>
                             </div>

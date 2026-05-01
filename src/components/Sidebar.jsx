@@ -95,7 +95,7 @@ export default function Sidebar() {
                         </svg>
 
                     </span>
-                    <span className={styles.label}>Teams</span>
+                    <span className={styles.label}>Team</span>
                 </NavLink>
 
                 <NavLink

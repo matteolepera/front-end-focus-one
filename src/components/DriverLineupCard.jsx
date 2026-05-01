@@ -31,24 +31,21 @@ export default function DriverLineupCard({ driver, backEndUrl }) {
 
                 <div className={styles.stats}>
                     <div>
-                        <span>Wins</span>
+                        <span>Vittorie</span>
                         <strong>{driver.total_wins}</strong>
                     </div>
 
                     <div>
-                        <span>Poles</span>
+                        <span>Pole Position</span>
                         <strong>{driver.total_pole_positions}</strong>
                     </div>
 
                     <div>
-                        <span>Podiums</span>
+                        <span>Podi</span>
                         <strong>{driver.total_podiums}</strong>
                     </div>
                 </div>
 
-                {driver.driver_slogan && (
-                    <p>{driver.driver_slogan}</p>
-                )}
             </div>
         </Link>
     );

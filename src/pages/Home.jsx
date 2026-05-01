@@ -19,12 +19,12 @@ export default function Home() {
                 <div className={styles.heroOverlay}></div>
 
                 <div className={styles.heroContent}>
-                    <span className={styles.eyebrow}>FocusOne</span>
+                    <span className={styles.eyebrow}>Stagione 2026</span>
 
-                    <h1>The New Era of Speed</h1>
+                    <h1>L’evoluzione della velocità</h1>
 
                     <p>
-                        Teams, drivers and performance insights from the 2026 Formula 1 season.
+                        Tutti i team, i piloti e le statistiche della stagione di Formula 1.
                     </p>
                 </div>
 
@@ -39,17 +39,16 @@ export default function Home() {
                 </div>
 
                 <div className={styles.featureContent}>
-                    <span className={styles.kicker}>Constructors</span>
+                    <span className={styles.kicker}>Costruttori</span>
 
-                    <h2>Teams</h2>
+                    <h2>Team</h2>
 
                     <p>
-                        Esplora le scuderie della competizione, la loro identità,
-                        le performance e i dettagli tecnici che definiscono la stagione.
+                        Scopri le scuderie della stagione: identità, prestazioni e dettagli tecnici che fanno la differenza in pista.
                     </p>
 
                     <Link to="/teams" className={styles.linkButton}>
-                        Visualizza teams
+                        Scopri i team
                     </Link>
                 </div>
             </section>
@@ -60,17 +59,16 @@ export default function Home() {
                 </div>
 
                 <div className={styles.featureContent}>
-                    <span className={styles.kicker}>The Grid</span>
+                    <span className={styles.kicker}>Griglia</span>
 
                     <h2>Piloti</h2>
 
                     <p>
-                        Scopri i protagonisti in pista: profili, carriere, risultati e
-                        caratteristiche dei piloti che stanno plasmando la nuova era della Formula 1.
+                        Scopri i protagonisti della stagione: profili, carriere e prestazioni dei piloti che fanno la differenza in pista.
                     </p>
 
                     <Link to="/drivers" className={styles.linkButton}>
-                        Visualizza piloti
+                        Scopri i piloti
                     </Link>
                 </div>
             </section>

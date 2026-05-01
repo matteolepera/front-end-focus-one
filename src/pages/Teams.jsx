@@ -40,11 +40,10 @@ export default function Teams({ setLoading }) {
                 </button>
 
                 <div>
-                    <span className={styles.eyebrow}>Constructors</span>
-                    <h1>Teams</h1>
+                    <span className={styles.eyebrow}>Costruttori</span>
+                    <h1>Team</h1>
                     <p>
-                        Scopri le scuderie protagoniste della stagione, le monoposto
-                        e i piloti che compongono la griglia.
+                        Le scuderie della stagione 2026.
                     </p>
                 </div>
             </header>

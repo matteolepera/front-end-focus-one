@@ -41,11 +41,10 @@ export default function Drivers({ setLoading }) {
                 </button>
 
                 <div>
-                    <span className={styles.eyebrow}>The Grid</span>
+                    <span className={styles.eyebrow}>Griglia</span>
                     <h1>Piloti</h1>
                     <p>
-                        I protagonisti della stagione: talento, velocità e identità
-                        dei piloti in griglia.
+                        I piloti della stagione 2026.
                     </p>
                 </div>
             </header>

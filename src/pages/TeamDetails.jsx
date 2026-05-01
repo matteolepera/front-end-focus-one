@@ -64,7 +64,7 @@ export default function TeamDetails({ setLoading }) {
                     </div>
 
                     <div>
-                        <span className={styles.eyebrow}>Formula 1 Team</span>
+                        <span className={styles.eyebrow}>Team</span>
                         <h1>{team.name}</h1>
                         <p>{team.full_name}</p>
                     </div>
@@ -80,17 +80,17 @@ export default function TeamDetails({ setLoading }) {
 
                 <div className={styles.stats}>
                     <div>
-                        <span>Base</span>
+                        <span>Sede</span>
                         <strong>{team.base_city}</strong>
                     </div>
 
                     <div>
-                        <span>Team Chief</span>
+                        <span>Team Principal</span>
                         <strong>{team.team_chief}</strong>
                     </div>
 
                     <div>
-                        <span>Technical Chief</span>
+                        <span>Direttore Tecnico</span>
                         <strong>{team.technical_chief}</strong>
                     </div>
 
@@ -103,22 +103,22 @@ export default function TeamDetails({ setLoading }) {
 
             <section className={styles.infoGrid}>
                 <article className={styles.panel}>
-                    <span className={styles.kicker}>Identity</span>
-                    <h2>Team Profile</h2>
+                    <span className={styles.kicker}>Profilo</span>
+                    <h2>Team</h2>
 
                     <div className={styles.dataList}>
                         <div>
-                            <span>First Entry</span>
+                            <span>Debutto</span>
                             <strong>{team.first_team_entry}</strong>
                         </div>
 
                         <div>
-                            <span>Reserve Driver</span>
+                            <span>Pilota di riserva</span>
                             <strong>{team.reserve_driver}</strong>
                         </div>
 
                         <div>
-                            <span>Full Name</span>
+                            <span>Nome completo</span>
                             <strong>{team.full_name}</strong>
                         </div>
                     </div>
@@ -126,27 +126,27 @@ export default function TeamDetails({ setLoading }) {
 
                 {team.car_specs && (
                     <article className={styles.panel}>
-                        <span className={styles.kicker}>Engineering</span>
-                        <h2>Car Specs</h2>
+                        <span className={styles.kicker}>Tecnica</span>
+                        <h2>Monoposto</h2>
 
                         <div className={styles.dataList}>
                             <div>
-                                <span>Chassis</span>
+                                <span>Telaio</span>
                                 <strong>{team.car_specs.chassis}</strong>
                             </div>
 
                             <div>
-                                <span>Weight</span>
+                                <span>Peso</span>
                                 <strong>{team.car_specs.weight_kg} kg</strong>
                             </div>
 
                             <div>
-                                <span>Front Suspension</span>
+                                <span>Sospensioni anteriori</span>
                                 <strong>{team.car_specs.front_suspension}</strong>
                             </div>
 
                             <div>
-                                <span>Rear Suspension</span>
+                                <span>Sospensioni posteriori</span>
                                 <strong>{team.car_specs.rear_suspension}</strong>
                             </div>
                         </div>
@@ -160,12 +160,12 @@ export default function TeamDetails({ setLoading }) {
 
                         <div className={styles.dataList}>
                             <div>
-                                <span>Manufacturer</span>
+                                <span>Costruttore</span>
                                 <strong>{team.car_specs.power_unit.manufacturer}</strong>
                             </div>
 
                             <div>
-                                <span>Season</span>
+                                <span>Stagione</span>
                                 <strong>{team.car_specs.power_unit.season}</strong>
                             </div>
                         </div>
@@ -175,8 +175,8 @@ export default function TeamDetails({ setLoading }) {
 
             <section className={styles.driversSection}>
                 <div className={styles.sectionHeader}>
-                    <span className={styles.kicker}>The Lineup</span>
-                    <h2>Drivers</h2>
+                    <span className={styles.kicker}>Formazione</span>
+                    <h2>Piloti</h2>
                 </div>
 
                 <div className={styles.driversGrid}>
