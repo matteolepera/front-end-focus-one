@@ -93,11 +93,17 @@
 }
 
 .biography {
-    max-width: 36rem;
-    margin: 1rem 0 0;
-    color: rgba(255, 255, 255, 0.62);
-    font-size: 0.95rem;
-    line-height: 1.7;
+    max-width: 28rem;
+    margin: 1rem 0 1rem;
+    padding: 0.85rem 1rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    line-height: 1.9;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .number {
