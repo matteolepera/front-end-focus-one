@@ -62,7 +62,7 @@
     align-items: flex-end;
     overflow: hidden;
     isolation: isolate;
-    padding: 0 1rem 2.5rem;
+    padding: 0px 1rem 1.5rem;
 }
 
 .heroMedia {
@@ -281,7 +281,6 @@
 
     .featureSection {
         grid-template-columns: 1.1fr 0.9fr;
-        min-height: 72dvh;
         padding: 4rem 2rem;
         gap: 3rem;
     }
@@ -304,7 +303,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
 
     .hero,
     .featureSection {
