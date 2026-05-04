@@ -16,7 +16,7 @@
 
 .code {
     font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    font-size: clamp(6rem, 24vw, 12rem);
+    font-size: 8rem;
     font-weight: 900;
     line-height: 0.88;
     letter-spacing: -0.04em;
@@ -97,4 +97,10 @@
 
 .link:active {
     transform: scale(0.96);
+}
+
+@media (min-width: 768px) {
+    .code {
+        font-size: 10rem;
+    }
 }

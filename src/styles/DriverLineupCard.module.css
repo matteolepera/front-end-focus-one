@@ -90,7 +90,7 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 3rem;
+    min-width: 2rem;
     min-height: 44px;
     padding: 0 0.75rem;
     border-radius: 999px;
@@ -169,7 +169,7 @@
     display: block;
     color: rgba(255, 255, 255, 0.52);
     font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    font-size: 0.64rem;
+    font-size: 0.50rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -200,5 +200,13 @@
 @media (min-width: 768px) {
     .card {
         min-height: 32rem;
+    }
+
+    .stats span {
+        font-size: 0.64rem;
+    }
+
+    .number {
+        min-width: 3rem;
     }
 }
