@@ -17,6 +17,8 @@ export default function DriverDetails({ setLoading }) {
 
     const [notFound, setNotFound] = useState(false);
 
+    const [bioOpen, setBioOpen] = useState(false);
+
     useEffect(() => {
         setLoading(true);
         axios.get(`${backEndUrl}api/drivers/${id}`)
@@ -34,6 +36,15 @@ export default function DriverDetails({ setLoading }) {
             });
 
     }, [id]);
+
+    useEffect(() => {
+        if (bioOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [bioOpen]);
 
     if (notFound) {
         return <NotFound />;
@@ -62,9 +73,6 @@ export default function DriverDetails({ setLoading }) {
 
                     <p className={styles.slogan}>{driver.driver_slogan}</p>
 
-                    <p className={styles.biography}>
-                        {driver.biography}
-                    </p>
                 </div>
 
 
@@ -95,6 +103,19 @@ export default function DriverDetails({ setLoading }) {
                     </div>
                 </div>
             </section>
+
+            {driver.biography && (
+                <button
+                    className={styles.bioPreview}
+                    onClick={() => setBioOpen(true)}
+                    type="button"
+                >
+                    <span className={styles.bioLabel}>Biografia</span>
+                    <p className={styles.bioText}>{driver.biography}</p>
+                    <div className={styles.bioFade} />
+                    <span className={styles.bioArrow}>↓ Leggi tutto</span>
+                </button>
+            )}
 
             <section className={styles.statsGrid}>
                 <article>
@@ -166,6 +187,29 @@ export default function DriverDetails({ setLoading }) {
                 </section>
             )}
 
+
+            {bioOpen && (
+                <div className={styles.modalBackdrop} onClick={() => setBioOpen(false)}>
+                    <div
+                        className={styles.modalSheet}
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <div className={styles.modalHeader}>
+                            <span className={styles.eyebrow}>Biografia</span>
+                            <button
+                                className={styles.modalClose}
+                                onClick={() => setBioOpen(false)}
+                                type="button"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <div className={styles.modalBody}>
+                            <p>{driver.biography}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

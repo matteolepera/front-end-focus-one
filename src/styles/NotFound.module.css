@@ -4,48 +4,57 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem 1rem;
     color: #ffffff;
-    font-family: "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
-    background:
-        radial-gradient(circle at 50% 40%, rgba(225, 6, 0, 0.10), transparent 55%),
-        linear-gradient(180deg, #05070b 0%, #080b11 46%, #05070b 100%);
+    font-family: 'Barlow', system-ui, sans-serif;
     text-align: center;
+
+    background:
+        radial-gradient(ellipse 55% 38% at 50% 36%, rgba(225, 6, 0, 0.10) 0%, transparent 60%),
+        linear-gradient(175deg, #050709 0%, #0a0d14 52%, #050709 100%);
 }
 
 .code {
-    font-size: clamp(6rem, 20vw, 12rem);
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: clamp(6rem, 24vw, 12rem);
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.88;
     letter-spacing: -0.04em;
+    text-transform: uppercase;
+
     color: transparent;
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.18));
+    background: linear-gradient(160deg,
+            rgba(255, 255, 255, 0.88) 0%,
+            rgba(255, 255, 255, 0.16) 100%);
     -webkit-background-clip: text;
     background-clip: text;
+
     user-select: none;
 }
 
 .title {
     margin: 0.5rem 0 0;
-    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #ff3b3b;
+    color: #e10600;
 }
 
 .description {
-    margin: 1rem 0 0;
-    color: rgba(255, 255, 255, 0.52);
+    margin: 1rem auto 0;
+    max-width: 26rem;
+    color: rgba(255, 255, 255, 0.50);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
 .divider {
-    width: 3rem;
+    width: 2.5rem;
     height: 2px;
     margin: 1.75rem auto;
-    background: rgba(225, 6, 0, 0.5);
+    background: rgba(225, 6, 0, 0.55);
     border-radius: 999px;
 }
 
@@ -53,23 +62,39 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+
+
+    min-height: 44px;
+    padding: 0 1.5rem;
+
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.11);
     background: rgba(255, 255, 255, 0.06);
+
     color: #ffffff;
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
     font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-decoration: none;
     text-transform: uppercase;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .link:hover {
     background: rgba(225, 6, 0, 0.18);
-    border-color: rgba(225, 6, 0, 0.4);
+    border-color: rgba(225, 6, 0, 0.38);
     transform: translateY(-2px);
+}
+
+.link:active {
+    transform: scale(0.96);
 }
